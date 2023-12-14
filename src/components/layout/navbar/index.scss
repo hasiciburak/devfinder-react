@@ -1,0 +1,21 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left-col {
+}
+
+.nav-right-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mode-switcher {
+  display: flex;
+  flex-direction: inherit;
+  gap: 16px;
+  cursor: pointer;
+}

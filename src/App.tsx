@@ -1,12 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.scss";
+import Navbar from "./components/layout/navbar";
+
+import Search from "./components/layout/search";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <div className="app">
+      <div className="wrapper">
+        <Navbar />
+        <Search />
+      </div>
+    </div>
+  );
 }
 
 export default App;

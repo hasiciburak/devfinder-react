@@ -18,8 +18,10 @@ const lightTheme = {
     greyishBlue: "#697C9A",
     kashmirBlue: "#4B6A9B",
     gunmetal: "#2B3442",
+    lightBlack: "#222731",
     zircon: "#F6F8FF",
     white: "#FEFEFE",
+    red: "#F74646",
   },
   fontSizes: {
     ...fontSizes,
