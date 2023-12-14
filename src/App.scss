@@ -48,6 +48,9 @@ p {
 .wrapper {
   width: 100%;
   max-width: 730px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .searchArea {

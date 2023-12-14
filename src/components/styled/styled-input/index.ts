@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledInputContainer = styled.div`
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  background-color: ${(props) => props.theme.colors.white};
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -16,6 +17,7 @@ export const StyledInputContainer = styled.div`
 
 export const StyledInput = styled.input`
   color: ${(props) => props.theme.colors.lightBlack};
+  background-color: ${(props) => props.theme.colors.white};
   caret-color: ${(props) => props.theme.colors.skyBlue};
   border: none;
   flex: 1;
