@@ -1,4 +1,4 @@
-import React from "react";
+import { Dispatch, SetStateAction } from "react";
 import {
   ErrorText,
   StyledInput,
@@ -7,19 +7,38 @@ import {
 import { PrimaryButton } from "../../styled/styled-button";
 import searchIcon from "../../../../src/assets/icon-search.svg";
 
-type Props = {};
+type Props = {
+  userName: string;
+  setUserName: Dispatch<SetStateAction<string>>;
+  loaded: boolean;
+  setLoaded: Dispatch<SetStateAction<boolean>>;
+  error: Error | null;
+  isLoading: boolean;
+  refetch: () => void;
+};
 
-const Search = (props: Props) => {
+const Search = ({ userName, setUserName, error, refetch }: Props) => {
   return (
     <div>
       {" "}
       <StyledInputContainer>
         <div className="searchArea">
           <img src={searchIcon} />
-          <StyledInput placeholder="Search github username..." />
+          <StyledInput
+            placeholder="Search github username..."
+            onChange={(e) => setUserName(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && refetch()}
+            value={userName}
+          />
         </div>
-        <ErrorText>No results</ErrorText>
-        <PrimaryButton>Search</PrimaryButton>
+        {error && <ErrorText>{error.message}</ErrorText>}
+        <PrimaryButton
+          onClick={() => {
+            refetch();
+          }}
+        >
+          Search
+        </PrimaryButton>
       </StyledInputContainer>
     </div>
   );

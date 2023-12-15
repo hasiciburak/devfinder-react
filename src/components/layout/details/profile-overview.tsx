@@ -1,21 +1,24 @@
 import profileImg from "../../../assets/profile-image.png";
 import "./index.scss";
-type Props = {};
+import { GithubUser } from "../../../types";
+type Props = {
+  data: GithubUser;
+};
 
-const ProfileOverview = (props: Props) => {
+const ProfileOverview = ({ data }: Props) => {
   return (
     <div className="profile-overview">
       <div className="profile-overview-left">
         <img
-          src={profileImg}
+          src={data.avatar_url ? data.avatar_url : profileImg}
           alt="Github Profile Image"
           className="profile-image"
         />
       </div>
       <div className="profile-overview-right">
-        <h1 className="overview-header">The Octocat</h1>
-        <p className="username">@octocat</p>
-        <h4 className="join-date">Joined 25 Jan 2011</h4>
+        <h1 className="overview-header">{data.name}</h1>
+        <p className="username">{data.login}</p>
+        <h4 className="join-date">Joined {data.updated_at}</h4>
       </div>
     </div>
   );

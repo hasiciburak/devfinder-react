@@ -1,18 +1,21 @@
 import Description from "./description";
+import { GithubUser } from "../../../types";
 import "./index.scss";
 import ProfileOverview from "./profile-overview";
 import SocialInfo from "./social-info";
 import Stats from "./stats";
-type Props = {};
+type Props = {
+  data: GithubUser;
+};
 
-const Details = (props: Props) => {
+const Details = ({ data }: Props) => {
   return (
     <div className="details-wrapper">
       {/* PROFILE OVERVIEW */}
-      <ProfileOverview />
-      <Description />
-      <Stats />
-      <SocialInfo />
+      <ProfileOverview data={data} />
+      <Description data={data} />
+      <Stats data={data} />
+      <SocialInfo data={data} />
     </div>
   );
 };

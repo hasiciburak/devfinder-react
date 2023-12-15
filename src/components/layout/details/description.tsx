@@ -1,14 +1,13 @@
-import React from "react";
+import { GithubUser } from "../../../types";
 
-type Props = {};
+type Props = {
+  data: GithubUser;
+};
 
-const Description = (props: Props) => {
+const Description = ({ data }: Props) => {
   return (
     <div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-        Quisque volutpat mattis eros.
-      </p>
+      <p>{data.bio ? data.bio : "No bio provided"}</p>
     </div>
   );
 };
